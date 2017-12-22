@@ -1,0 +1,28 @@
+ 
+	<div layout="row" flex layout-align="center center" style="background-color:rgba(206, 201, 201, 0.69)">
+		<div layout="column" flex  layout-align="center center">
+			<form layout="row" flex class="content" ng-submit="submit()">
+				<div layout="column" flex="10"> </div>
+				<div layout="column" flex >
+					 <div layout="row" flex="25" layout-align="start center">
+					 	<span class="login-label">Login</span>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="start center" class="inputCls">
+					 	 <md-input-container flex class="inputCls" >
+                            <input type="text" placeholder="User Name" name="PO no" ng-model="user.userName" required>
+                        </md-input-container>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="start center"> 
+					 	 <md-input-container flex class="inputCls" >
+                            <input type="text" placeholder="Password" name="PO no" ng-model="user.password" required>
+                        </md-input-container>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="end center">
+					 	<md-button class="md-primary" ng-click="signUp()" style="color: #515258;border:2px solid">Sign Up</md-button>
+					 	<md-button class="md-primary"  type="submit" style="border:2px solid">Sign In</md-button>
+					 </div>					
+				</div> 
+				<div layout="column" flex="10"> </div>
+			</form>
+		</div>
+	</div>

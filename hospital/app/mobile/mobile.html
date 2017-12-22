@@ -1,0 +1,47 @@
+ 
+	<div layout="row" flex layout-align="center center" style="background-color:rgba(206, 201, 201, 0.69)">
+		<form name="cusForm"  layout="column" flex  layout-align="center center">
+			<div layout="row" flex class="content-mobile" >
+				<div layout="column" flex="10"> </div>
+				<div layout="column" flex >
+					 <div layout="row" flex="25" layout-align="start center">
+					 	<span class="login-label-mobile">Mobile</span>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="start center" class="inputCls">
+					 	<md-input-container flex class="inputCls" >
+                            <input type="text" name="phone" placeholder="phone"  ng-model="user.phone" required ng-pattern="/^[0-9 ()+-]+$/">
+                            <div ng-messages="cusForm.phone.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern']">
+		                            Your phone number should only include numeric values.
+		                        </div>
+		                    </div>
+                        </md-input-container>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="start center"> 
+					 	 <md-input-container flex class="inputCls" >
+                            <input type="text" name="pin" placeholder="Pin"  ng-model="user.pin" required ng-pattern="/^[0-9 ()+-]+$/">
+                            <div ng-messages="cusForm.pin.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern']">
+		                            Your pin number should only include numeric values.
+		                        </div>
+		                    </div>
+                        </md-input-container>
+					 </div>	
+					 <div layout="row" flex="25" layout-align="start center"> 
+					 	 <md-input-container flex class="inputCls">
+                            <input type="text" name="amount" placeholder="Amount"  ng-model="user.amount" required ng-pattern="/^[0-9 ()+-]+$/"  ng-disabled="true">
+                            <div ng-messages="cusForm.amount.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern']">
+		                            Your amount number should only include numeric values.
+		                        </div>
+		                    </div>
+                        </md-input-container>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="end center"> 
+					 	<md-button class="md-primary" ng-click="submit()" ng-disabled="cusForm.$invalid" style="border:2px solid">Submit</md-button>
+					 </div>					
+				</div> 
+				<div layout="column" flex="10"> </div>
+			</div>
+		</form>
+	</div>

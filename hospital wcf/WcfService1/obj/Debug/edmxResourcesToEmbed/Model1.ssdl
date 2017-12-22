@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="spdcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appoinment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="time" Type="nchar" MaxLength="10" />
+    <Property Name="docID" Type="nchar" MaxLength="10" />
+    <Property Name="custID" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="credit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="custID" Type="nchar" MaxLength="10" />
+    <Property Name="cardName" Type="nchar" MaxLength="110" />
+    <Property Name="cardNo" Type="nchar" MaxLength="110" />
+    <Property Name="csv" Type="nchar" MaxLength="10" />
+    <Property Name="date" Type="nchar" MaxLength="10" />
+    <Property Name="amount" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="fname" Type="nchar" MaxLength="22" />
+    <Property Name="lname" Type="nchar" MaxLength="22" />
+    <Property Name="phone" Type="nchar" MaxLength="22" />
+    <Property Name="gender" Type="nchar" MaxLength="22" />
+    <Property Name="email" Type="nchar" MaxLength="30" />
+    <Property Name="fax" Type="nchar" MaxLength="22" />
+    <Property Name="password" Type="nchar" MaxLength="22" />
+  </EntityType>
+  <EntityType Name="DocAvailable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="timeFor" Type="nchar" MaxLength="10" />
+    <Property Name="timeTo" Type="nchar" MaxLength="10" />
+    <Property Name="docID" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="10" />
+    <Property Name="specialty" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="custID" Type="nchar" MaxLength="10" />
+    <Property Name="userName" Type="nchar" MaxLength="33" />
+    <Property Name="password" Type="nchar" MaxLength="33" />
+  </EntityType>
+  <EntityType Name="mobile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="mobile" Type="nchar" MaxLength="10" />
+    <Property Name="pin" Type="nchar" MaxLength="10" />
+    <Property Name="amount" Type="nchar" MaxLength="10" />
+    <Property Name="custID" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="spdcModelStoreContainer">
+    <EntitySet Name="Appoinment" EntityType="Self.Appoinment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="credit" EntityType="Self.credit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocAvailable" EntityType="Self.DocAvailable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mobile" EntityType="Self.mobile" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

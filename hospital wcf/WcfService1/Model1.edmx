@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="spdcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appoinment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="time" Type="nchar" MaxLength="10" />
+          <Property Name="docID" Type="nchar" MaxLength="10" />
+          <Property Name="custID" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="credit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="custID" Type="nchar" MaxLength="10" />
+          <Property Name="cardName" Type="nchar" MaxLength="110" />
+          <Property Name="cardNo" Type="nchar" MaxLength="110" />
+          <Property Name="csv" Type="nchar" MaxLength="10" />
+          <Property Name="date" Type="nchar" MaxLength="10" />
+          <Property Name="amount" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="fname" Type="nchar" MaxLength="22" />
+          <Property Name="lname" Type="nchar" MaxLength="22" />
+          <Property Name="phone" Type="nchar" MaxLength="22" />
+          <Property Name="gender" Type="nchar" MaxLength="22" />
+          <Property Name="email" Type="nchar" MaxLength="30" />
+          <Property Name="fax" Type="nchar" MaxLength="22" />
+          <Property Name="password" Type="nchar" MaxLength="22" />
+        </EntityType>
+        <EntityType Name="DocAvailable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="timeFor" Type="nchar" MaxLength="10" />
+          <Property Name="timeTo" Type="nchar" MaxLength="10" />
+          <Property Name="docID" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="10" />
+          <Property Name="specialty" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="custID" Type="nchar" MaxLength="10" />
+          <Property Name="userName" Type="nchar" MaxLength="33" />
+          <Property Name="password" Type="nchar" MaxLength="33" />
+        </EntityType>
+        <EntityType Name="mobile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="mobile" Type="nchar" MaxLength="10" />
+          <Property Name="pin" Type="nchar" MaxLength="10" />
+          <Property Name="amount" Type="nchar" MaxLength="10" />
+          <Property Name="custID" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="spdcModelStoreContainer">
+          <EntitySet Name="Appoinment" EntityType="Self.Appoinment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="credit" EntityType="Self.credit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocAvailable" EntityType="Self.DocAvailable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mobile" EntityType="Self.mobile" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="spdcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Appoinment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="docID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="credit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cardName" Type="String" MaxLength="110" FixedLength="true" Unicode="true" />
+          <Property Name="cardNo" Type="String" MaxLength="110" FixedLength="true" Unicode="true" />
+          <Property Name="csv" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="amount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="22" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="22" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DocAvailable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="timeFor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="timeTo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="docID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="specialty" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="userName" Type="String" MaxLength="33" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="33" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mobile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="mobile1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="amount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="spdcEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appoinments" EntityType="Self.Appoinment" />
+          <EntitySet Name="credits" EntityType="Self.credit" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="DocAvailables" EntityType="Self.DocAvailable" />
+          <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="mobiles" EntityType="Self.mobile" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="spdcModelStoreContainer" CdmEntityContainer="spdcEntities5">
+          <EntitySetMapping Name="Appoinments">
+            <EntityTypeMapping TypeName="spdcModel.Appoinment">
+              <MappingFragment StoreEntitySet="Appoinment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="docID" ColumnName="docID" />
+                <ScalarProperty Name="custID" ColumnName="custID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="credits">
+            <EntityTypeMapping TypeName="spdcModel.credit">
+              <MappingFragment StoreEntitySet="credit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="custID" ColumnName="custID" />
+                <ScalarProperty Name="cardName" ColumnName="cardName" />
+                <ScalarProperty Name="cardNo" ColumnName="cardNo" />
+                <ScalarProperty Name="csv" ColumnName="csv" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="spdcModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocAvailables">
+            <EntityTypeMapping TypeName="spdcModel.DocAvailable">
+              <MappingFragment StoreEntitySet="DocAvailable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="timeFor" ColumnName="timeFor" />
+                <ScalarProperty Name="timeTo" ColumnName="timeTo" />
+                <ScalarProperty Name="docID" ColumnName="docID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="spdcModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="specialty" ColumnName="specialty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="spdcModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="custID" ColumnName="custID" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mobiles">
+            <EntityTypeMapping TypeName="spdcModel.mobile">
+              <MappingFragment StoreEntitySet="mobile">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="mobile1" ColumnName="mobile" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="custID" ColumnName="custID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

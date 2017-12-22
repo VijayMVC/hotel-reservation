@@ -1,0 +1,70 @@
+ 
+	<div layout="row" flex layout-align="center center" style="background-color:rgba(206, 201, 201, 0.69)">
+		<form name="cusForm"  layout="column" flex  layout-align="center center">
+			<div layout="row" flex class="content-credit" >
+				<div layout="column" flex="10"> </div>
+				<div layout="column" flex >
+					 <div layout="row" flex="25" layout-align="start center">
+					 	<span class="login-label-credit">credit</span>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="start center" class="inputCls">
+					 	<md-input-container flex class="inputCls" >
+                            <input type="text" name="name" placeholder="Name"  ng-model="user.cardName"  > 
+                        </md-input-container>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="start center"> 
+					 	 <md-input-container flex class="inputCls" >
+                            <input type="text" name="cardNo" placeholder="Card No"  ng-model="user.cardNo" required ng-pattern="/^\d{1,16}$/">
+                            <div ng-messages="cusForm.cardNo.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern']">
+		                            Your card number should only include numeric values.
+		                        </div>
+		                    </div>
+                        </md-input-container>
+					 </div>	
+					 <div layout="row" flex="25" layout-align="start center"> 
+					 	 <md-input-container flex class="inputCls">
+                            <input type="text" name="cardMonth" placeholder="MM"  ng-model="user.cardMonth" required ng-pattern="/[1-9]|1[012]/" ng-maxlength="2" >
+                            <div ng-messages="cusForm.cardMonth.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern','maxlength']">
+		                            enter valid month
+		                        </div>
+		                    </div> 
+                        </md-input-container> 
+					 	 <md-input-container flex class="inputCls">
+                            <input type="text" name="cardYear" placeholder="YY" ng-model="user.cardYear" ng-minlength="4" 
+                            ng-maxlength="4"  >
+                            <div ng-messages="cusForm.cardYear.$error" role="alert">
+		                        <div ng-message-exp="['required','minlength','maxlength']">
+		                            enter valid Year
+		                        </div>
+		                    </div>  
+                        </md-input-container> 
+					 	 <md-input-container flex class="inputCls">
+                            <input type="text" name="csv" placeholder="CVC" required  ng-model="user.csv"  ng-minlength="3" 
+                            ng-maxlength="3"> 
+                            <div ng-messages="cusForm.csv.$error" role="alert">
+		                        <div ng-message-exp="['required','minlength','maxlength']">
+		                            enter valid Year
+		                        </div>
+		                    </div>
+                        </md-input-container>
+					 </div>	
+					 <div layout="row" flex="25" layout-align="start center"> 
+					 	 <md-input-container flex class="inputCls">
+                            <input type="text" name="amount" placeholder="Amount"   ng-model="user.amount" required ng-pattern="/^[0-9 ()+-]+$/"  ng-disabled="true">
+                            <div ng-messages="cusForm.amount.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern']">
+		                            Your amount number should only include numeric values.
+		                        </div>
+		                    </div>
+                        </md-input-container>
+					 </div>		
+					 <div layout="row" flex="25" layout-align="end center"> 
+					 	<md-button class="md-primary" ng-click="submit()" ng-disabled="cusForm.$invalid" style="border:2px solid">Submit</md-button>
+					 </div>					
+				</div> 
+				<div layout="column" flex="10"> </div>
+			</div>
+		</form>
+	</div>

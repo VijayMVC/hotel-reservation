@@ -1,0 +1,73 @@
+ 
+	<div layout="row" flex layout-align="center center" style="background-color:rgba(206, 201, 201, 0.69)">
+		<form name="cusForm"  layout="column" flex  layout-align="center center">
+			<div layout="row" flex class="contentSign" >
+				<div layout="column" flex="5"> </div>
+				<div layout="column" flex >
+				 					
+						 <div layout="row" flex="25" layout-align="start center">
+						 	<span class="login-labelSign">SignUp</span>
+						 </div>		
+						 <div layout="row" flex layout-align="start center" class="inputCls">
+						 	<md-input-container flex class="inputCls" >
+	                            <input type="text" placeholder="First Name" name="fName" ng-model="user.fname">
+	                        </md-input-container>
+	                        <div flex="5"></div>
+						 	<md-input-container flex class="inputCls" >
+	                            <input type="text" placeholder="Last Name" name="lName" ng-model="user.lname">
+	                        </md-input-container>
+						 </div>	
+						 <div layout="row" flex layout-align="start center" class="inputCls">
+						 	<md-input-container flex class="inputCls" >
+	                            <input type="text" name="phone" placeholder="phone"   ng-model="user.phone" required ng-pattern="/^[0-9 ()+-]+$/">
+	                            <div ng-messages="cusForm.phone.$error" role="alert">
+			                        <div ng-message-exp="['required','pattern']">
+			                            Your phone number should only include numeric values.
+			                        </div>
+			                    </div>
+	                        </md-input-container>
+	                        <div flex="5"></div>
+						 	<md-select placeholder="Gender"  ng-model="user.gender" flex style="margin-top: 0px;">
+			                 	<md-optgroup label="Gender">
+				                  <md-option value="Male">Male </md-option>
+				                  <md-option value="Female">Female </md-option>
+				                </md-optgroup>
+			                </md-select>
+						 </div>	
+						 <div layout="row" flex layout-align="start center" class="inputCls"> 
+			                <md-input-container  flex >
+			                    <input placeholder="Email" type="email" ng-model="user.email" name="email" ng-pattern="/^.+@.+\..+$/"> 
+			                    <div ng-messages="cusForm.email.$error" role="alert" >
+			                       <div ng-message-exp="['required','pattern']">Please enter a correct e-mail address.</div> 
+			                    </div> 
+			                </md-input-container>
+	                        <div flex="5"></div>
+						 	<md-input-container flex class="inputCls" >
+	                           <input type="text" name="fax" placeholder="Fax"  ng-model="user.fax" required ng-pattern="/^[0-9 ()+-]+$/">
+	                            <div ng-messages="cusForm.fax.$error" role="alert">
+			                        <div ng-message-exp="['required','pattern']">
+			                            Your fax number should only include numeric values.
+			                        </div>
+			                    </div>
+	                        </md-input-container>
+						 </div>	 
+						 <div layout="row" flex layout-align="start center" class="inputCls">
+						 	<md-input-container flex class="inputCls" >
+	                            <input type="password" placeholder="password" name="password" ng-model="user.password">
+	                        </md-input-container>
+	                        <div flex="5"></div>
+						 	<md-input-container flex class="inputCls" >
+	                            <input type="password" placeholder="confirm password" name="cpassword" ng-model="user.Cpassword" 
+	                            password-verify="user.password">
+	                            <div style="color: red;" ng-show="cusForm.cpassword.$error.passwordVerify">
+       							 password is not equal!</div> 
+	                        </md-input-container>
+						 </div>		
+						 <div layout="row" flex="15" layout-align="end center"> 
+						 	<md-button class="md-primary"  style="border:2px solid" ng-disabled="cusForm.$invalid" ng-click="submit()">Sign Up</md-button>
+						 </div>	
+				</div> 
+				<div layout="column" flex="5"> </div>
+			</div>
+		</form>
+	</div>

@@ -1,0 +1,18 @@
+
+<div layout="column" flex>
+   <md-toolbar layout="row" flex="10" class="md-hue-1" style="background-color:rgb(81, 82, 88);">
+        <div class="md-toolbar-tools" flex="80" layout layout-align="start center">
+          <span ng-click="goToMain()" style="color: #0fd6c5;cursor:pointer;">rasm pay </span>
+        </div> 
+        <div flex layout="column" layout-align="center center" ng-if="userName">
+          <div flex></div>
+          <span flex class="userName" layout>
+            {{userName}}
+          </span>
+          <span flex style="font-size: 15px;color: #42ffef;font-weight: bold;cursor: pointer;" layout ng-click="logOut()">Logout 
+          </span>
+        </div>      
+      </md-toolbar>
+  <div layout="row" flex ui-view class="layout-column flex"></div>
+
+</div>

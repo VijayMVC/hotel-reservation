@@ -1,0 +1,53 @@
+ 
+	<div layout="row" flex layout-align="center center" style="background-color:rgba(206, 201, 201, 0.69)">
+		<form name="cusForm"  layout="column" flex  layout-align="center center">
+			<div layout="row" flex class="contentAppoinment" >
+				<div layout="column" flex="10"> </div>
+				<div layout="column" flex >
+				 					
+						 <div layout="row" flex="25" layout-align="start center">
+						 	<span class="login-labelAppoinment">Make Appoinment</span>
+						 </div>		
+						 <div layout="row" flex layout-align="start center" class="inputCls">
+						 	<md-input-container flex class="inputCls" >
+	                            <input type="text" placeholder="Name" name="Name" ng-model="user.Name">
+	                        </md-input-container> 
+						 </div>	
+						 <div layout="row" flex layout-align="start center" class="inputCls">  
+	                        <md-select placeholder="Doctor"  ng-model="user.doctor" flex style="margin-top: 0px;">
+			                 	<md-optgroup label="Type">
+				                  <md-option ng-repeat="item in doctors" value="{{item}}">{{item.name}}</md-option> 
+				                </md-optgroup>
+			                </md-select>
+						 </div>	
+						 <div layout="row" flex layout-align="start center" class="inputCls"> 
+			                <md-input-container  flex >
+			                    <input placeholder="time" type="text" ng-model="user.time" name="time">  
+			                </md-input-container> 
+						 </div>	 
+						 <div layout="row" flex layout-align="start center" class="inputCls" ng-model="user.type"> 
+						 	<md-select placeholder="Payment Type"  ng-model="user.type" flex style="margin-top: 0px;">
+			                 	<md-optgroup label="Type">
+				                  <md-option value="Mobile">Mobile</md-option>
+				                  <md-option value="Credit">Credit</md-option>
+				                </md-optgroup>
+			                </md-select>
+						 </div>	
+						 <div layout="row" flex layout-align="start center" class="inputCls"> 
+			                <md-input-container flex class="inputCls" >
+                            <input type="text"  placeholder="Amount" name="amount" ng-model="user.amount" required ng-pattern="/^[0-9 ()+-]+$/">
+                            <div ng-messages="cusForm.amount.$error" role="alert">
+		                        <div ng-message-exp="['required','pattern']">
+		                            Your amount number should only include numeric values.
+		                        </div>
+		                    </div>
+                        </md-input-container>
+						 </div>	 	
+						 <div layout="row" flex="15" layout-align="end center"> 
+						 	<md-button class="md-primary" ng-click="submit()"  style="border:2px solid" ng-disabled="cusForm.$invalid">Next</md-button>
+						 </div>	
+				</div> 
+				<div layout="column" flex="10"> </div>
+			</div>
+		</form>
+	</div>

@@ -1,0 +1,14 @@
+.contentSign{
+	height: 500px;
+    width: 700px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px #888888
+}
+
+.login-labelSign{
+	color: rgb(81, 96, 140);
+    font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+} 

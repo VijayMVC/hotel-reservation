@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="spdcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Appoinment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="docID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="credit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="cardName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="cardNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="csv" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="amount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="fname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="10" />
+    <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DocAvailable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="timeFor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="timeTo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="docID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="specialty" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mobile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="mobile1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="amount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="custID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="spdcEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Appoinments" EntityType="Self.Appoinment" />
+    <EntitySet Name="credits" EntityType="Self.credit" />
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="DocAvailables" EntityType="Self.DocAvailable" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+    <EntitySet Name="Logins" EntityType="Self.Login" />
+    <EntitySet Name="mobiles" EntityType="Self.mobile" />
+  </EntityContainer>
+</Schema>

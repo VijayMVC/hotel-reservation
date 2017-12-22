@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="spdcModelStoreContainer" CdmEntityContainer="spdcEntities5">
+    <EntitySetMapping Name="Appoinments">
+      <EntityTypeMapping TypeName="spdcModel.Appoinment">
+        <MappingFragment StoreEntitySet="Appoinment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="docID" ColumnName="docID" />
+          <ScalarProperty Name="custID" ColumnName="custID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="credits">
+      <EntityTypeMapping TypeName="spdcModel.credit">
+        <MappingFragment StoreEntitySet="credit">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="custID" ColumnName="custID" />
+          <ScalarProperty Name="cardName" ColumnName="cardName" />
+          <ScalarProperty Name="cardNo" ColumnName="cardNo" />
+          <ScalarProperty Name="csv" ColumnName="csv" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="spdcModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocAvailables">
+      <EntityTypeMapping TypeName="spdcModel.DocAvailable">
+        <MappingFragment StoreEntitySet="DocAvailable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="timeFor" ColumnName="timeFor" />
+          <ScalarProperty Name="timeTo" ColumnName="timeTo" />
+          <ScalarProperty Name="docID" ColumnName="docID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="spdcModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="specialty" ColumnName="specialty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="spdcModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="custID" ColumnName="custID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mobiles">
+      <EntityTypeMapping TypeName="spdcModel.mobile">
+        <MappingFragment StoreEntitySet="mobile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="mobile1" ColumnName="mobile" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="custID" ColumnName="custID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
